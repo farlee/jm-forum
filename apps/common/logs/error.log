@@ -1,0 +1,32 @@
+[Sun, 29 Mar 15 17:58:32 +0800][ERROR] Service 'view' was not found in the dependency injection container
+[Sun, 29 Mar 15 17:58:32 +0800][ERROR] #0 [internal function]: Phalcon\DI->getShared('view')
+#1 /srv/www/forum/public/index.php(56): Phalcon\Mvc\Application->handle()
+#2 {main}
+[Sun, 29 Mar 15 18:02:29 +0800][ERROR] Service 'view' was not found in the dependency injection container
+[Sun, 29 Mar 15 18:02:29 +0800][ERROR] #0 [internal function]: Phalcon\DI->getShared('view')
+#1 /srv/www/forum/public/index.php(56): Phalcon\Mvc\Application->handle()
+#2 {main}
+[Sun, 29 Mar 15 18:03:04 +0800][ERROR] Service 'view' was not found in the dependency injection container
+[Sun, 29 Mar 15 18:03:04 +0800][ERROR] #0 [internal function]: Phalcon\DI->getShared('view')
+#1 /srv/www/forum/public/index.php(56): Phalcon\Mvc\Application->handle()
+#2 {main}
+[Sun, 29 Mar 15 18:04:51 +0800][ERROR] Service 'view' was not found in the dependency injection container
+[Sun, 29 Mar 15 18:04:51 +0800][ERROR] #0 [internal function]: Phalcon\DI->getShared('view')
+#1 /srv/www/forum/public/index.php(56): Phalcon\Mvc\Application->handle()
+#2 {main}
+[Sun, 29 Mar 15 21:55:00 +0800][ERROR] Service 'view' was not found in the dependency injection container
+[Sun, 29 Mar 15 21:55:00 +0800][ERROR] #0 [internal function]: Phalcon\DI->getShared('view')
+#1 /srv/www/forum/public/index.php(56): Phalcon\Mvc\Application->handle()
+#2 {main}
+[Sun, 29 Mar 15 22:00:32 +0800][ERROR] Service 'view' was not found in the dependency injection container
+[Sun, 29 Mar 15 22:00:32 +0800][ERROR] #0 [internal function]: Phalcon\DI->getShared('view')
+#1 /srv/www/forum/public/index.php(45): Phalcon\Mvc\Application->handle()
+#2 {main}
+[Sun, 29 Mar 15 22:41:25 +0800][ERROR] Service 'view' was not found in the dependency injection container
+[Sun, 29 Mar 15 22:41:25 +0800][ERROR] #0 [internal function]: Phalcon\DI->getShared('view')
+#1 /srv/www/forum/public/index.php(34): Phalcon\Mvc\Application->handle()
+#2 {main}
+[Sun, 29 Mar 15 22:41:32 +0800][ERROR] Service 'view' was not found in the dependency injection container
+[Sun, 29 Mar 15 22:41:32 +0800][ERROR] #0 [internal function]: Phalcon\DI->getShared('view')
+#1 /srv/www/forum/public/index.php(34): Phalcon\Mvc\Application->handle()
+#2 {main}

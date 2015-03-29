@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Frontend Index
+ * Backend Index
 */
 
 use Phalcon\Http\Response;
@@ -16,22 +16,11 @@ if (!isset($_GET['_url'])) {
 }
 
 define('APP_PATH', realpath('..'));
-define('APP_PATH_FRONTEND', realpath('..').'/apps/frontend/');
-
-/**
- * Read the configuration
- */
-$config = include APP_PATH_FRONTEND. "config/config.php";
-
-/**
- * Include the loader
- */
-require APP_PATH_FRONTEND.  "config/loader.php";
 
 /**
  * Include composer autoloader
  */
-require APP_PATH.DIRECTORY_SEPARATOR. "vendor/autoload.php";
+require APP_PATH .DIRECTORY_SEPARATOR. "vendor/autoload.php";
 
 try {
 
@@ -40,9 +29,18 @@ try {
      */
     $di = new FactoryDefault();
 
-    require APP_PATH_FRONTEND . "config/services.php";
-
     $application = new Application($di);
+
+    $application->registerModules(array(
+        'frontend' => array(
+            'className' => 'Modules\Frontend\Module',
+            'path' => '../apps/frontend/Module.php'
+        ),
+        'backend' => array(
+            'className' => 'Modules\Backend\Module',
+            'path' => '../apps/backend/Module.php'
+        )
+    ));
 
     echo $application->handle()->getContent();
 
@@ -51,7 +49,7 @@ try {
     /**
      * Log the exception
      */
-    $logger = new Logger(APP_PATH_FRONTEND . 'logs/error.log');
+    $logger = new Logger(APP_PATH . '/apps/common/logs/error.log');
     $logger->error($e->getMessage());
     $logger->error($e->getTraceAsString());
 
