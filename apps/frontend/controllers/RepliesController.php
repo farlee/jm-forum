@@ -16,7 +16,7 @@ use Phalcon\Http\Response;
 /**
  * Class RepliesController
  *
- * @package Jimi\Controllers
+ * @package Jimi\Frontend
  */
 class RepliesController extends ControllerBase
 {

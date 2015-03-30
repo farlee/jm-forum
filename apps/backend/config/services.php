@@ -56,7 +56,7 @@ $di->set(
 
         $volt->setOptions(
             array(
-                "compiledPath"      => APP_PATH_FRONTEND . "cache/volt/",
+                "compiledPath"      => APP_PATH_BACKEND . "cache/volt/",
                 "compiledSeparator" => "_",
                 "compileAlways"     => $config->application->debug
             )
@@ -106,7 +106,7 @@ $di->set(
 
             $eventsManager = new EventsManager();
 
-            $logger = new FileLogger(APP_PATH_FRONTEND . "logs/db.log");
+            $logger = new FileLogger(APP_PATH_BACKEND . "logs/db.log");
 
             //Listen all the database events
             $eventsManager->attach(
@@ -167,7 +167,7 @@ $di->set(
         }
 
         return new MetaDataAdapter(array(
-            'metaDataDir' => APP_PATH_FRONTEND . 'cache/metaData/'
+            'metaDataDir' => APP_PATH_BACKEND . 'cache/metaData/'
         ));
 
     },
@@ -193,7 +193,7 @@ $di->set(
 $di->set(
     'router',
     function () {
-        return include APP_PATH_FRONTEND. "config/routes.php";
+        return include APP_PATH_BACKEND. "config/routes.php";
     },
     true
 );
@@ -235,7 +235,7 @@ $di->set(
     'dispatcher',
     function () {
         $dispatcher = new MvcDispatcher();
-        $dispatcher->setDefaultNamespace('Jimi\Frontend');
+        $dispatcher->setDefaultNamespace('Jimi\Backend');
 
         $eventsManager = new EventsManager();
         $eventsManager->attach("dispatch:beforeException", function($event, $dispatcher, $exception) {
@@ -247,6 +247,18 @@ $di->set(
                 ));
                 return false;
             }
+            //Alternative way, controller or action doesn’t exist
+            /*if ($event->getType() == 'beforeException') {
+                switch ($exception->getCode()) {
+                    case MvcDispatcher::EXCEPTION_HANDLER_NOT_FOUND:
+                    case MvcDispatcher::EXCEPTION_ACTION_NOT_FOUND:
+                        $dispatcher->forward(array(
+                            'controller' => 'index',
+                            'action' => 'r404'
+                        ));
+                    return false;
+                }
+            }*/
         });
 
         $dispatcher->setEventsManager($eventsManager);
@@ -275,7 +287,7 @@ $di->set(
             ));
 
             return new FileCache($frontCache, array(
-                "cacheDir" => APP_PATH_FRONTEND . "cache/views/",
+                "cacheDir" => APP_PATH_BACKEND . "cache/views/",
                 "prefix"   => "forum-cache-"
             ));
         }
@@ -302,7 +314,7 @@ $di->set(
             ));
 
             return new \Phalcon\Cache\Backend\File($frontCache, array(
-                "cacheDir" => APP_PATH_FRONTEND . "cache/data/",
+                "cacheDir" => APP_PATH_BACKEND . "cache/data/",
                 "prefix"   => "forum-cache-data-"
             ));
         }

@@ -28,7 +28,7 @@ use Phalcon\Mvc\View;
 /**
  * Class DiscussionsController
  *
- * @package Jimi\Controllers
+ * @package Jimi\Frontend
  */
 class DiscussionsController extends ControllerBase
 {

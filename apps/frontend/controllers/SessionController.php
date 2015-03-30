@@ -15,7 +15,7 @@ use Phalcon\Mvc\Model;
 /**
  * Class SessionController
  *
- * @package Jimi\Controllers
+ * @package Jimi\Frontend
  */
 class SessionController extends ControllerBase
 {

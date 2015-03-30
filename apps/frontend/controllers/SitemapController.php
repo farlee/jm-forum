@@ -10,7 +10,7 @@ use Phalcon\Http\Response;
 /**
  * Class SitemapController
  *
- * @package Jimi\Controllers
+ * @package Jimi\Frontend
  */
 class SitemapController extends ControllerBase
 {

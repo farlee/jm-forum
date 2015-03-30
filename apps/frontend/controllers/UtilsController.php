@@ -12,7 +12,7 @@ use Phalcon\Http\Response;
 /**
  * Class UtilsController
  *
- * @package Jimi\Controllers
+ * @package Jimi\Frontend
  */
 class UtilsController extends Controller
 {

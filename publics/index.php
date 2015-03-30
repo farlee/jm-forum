@@ -16,11 +16,22 @@ if (!isset($_GET['_url'])) {
 }
 
 define('APP_PATH', realpath('..'));
+define('APP_PATH_BACKEND', realpath('..').'/apps/backend/');
+
+/**
+ * Read the configuration
+ */
+$config = include APP_PATH_BACKEND. "config/config.php";
+
+/**
+ * Include the loader
+ */
+require APP_PATH_BACKEND.  "config/loader.php";
 
 /**
  * Include composer autoloader
  */
-require APP_PATH .DIRECTORY_SEPARATOR. "vendor/autoload.php";
+require APP_PATH.DIRECTORY_SEPARATOR. "vendor/autoload.php";
 
 try {
 
@@ -29,18 +40,9 @@ try {
      */
     $di = new FactoryDefault();
 
-    $application = new Application($di);
+    require APP_PATH_BACKEND . "config/services.php";
 
-    $application->registerModules(array(
-        'frontend' => array(
-            'className' => 'Modules\Frontend\Module',
-            'path' => '../apps/frontend/Module.php'
-        ),
-        'backend' => array(
-            'className' => 'Modules\Backend\Module',
-            'path' => '../apps/backend/Module.php'
-        )
-    ));
+    $application = new Application($di);
 
     echo $application->handle()->getContent();
 
@@ -49,7 +51,7 @@ try {
     /**
      * Log the exception
      */
-    $logger = new Logger(APP_PATH . '/apps/common/logs/error.log');
+    $logger = new Logger(APP_PATH_BACKEND . 'logs/error.log');
     $logger->error($e->getMessage());
     $logger->error($e->getTraceAsString());
 

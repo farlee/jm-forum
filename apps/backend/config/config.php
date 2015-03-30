@@ -1,18 +1,17 @@
 <?php
 
 /*
- * Frontend config
+ * Backend config
  */
 
 
 return new \Phalcon\Config(array(
 
     'site' => array(
-        'name'      => 'JIMI',
-        'url'       => 'http://www.jimip.com',
+        'name'      => 'JimiP.Com',
+        'url'       => 'http://adm.jimip.com',
         'project'   => 'jimi',
         'software'  => 'jimi-forum',
-        'repo'      => 'https://github.com/farlee/jm-forum',
         //'docs'      => '',
     ),
 
@@ -26,9 +25,9 @@ return new \Phalcon\Config(array(
     ),
 
     'application' => array(
-        'controllersDir' => APP_PATH_FRONTEND . 'controllers/',
+        'controllersDir' => APP_PATH_BACKEND . 'controllers/',
         'modelsDir'      => APP_PATH . '/apps/common/models/',
-        'viewsDir'       => APP_PATH_FRONTEND . 'views/',
+        'viewsDir'       => APP_PATH_BACKEND . 'views/',
         'pluginsDir'     => APP_PATH . '/apps/common/plugins/',
         'libraryDir'     => APP_PATH . '/apps/common/library/',
         'development'    => array(
@@ -36,7 +35,7 @@ return new \Phalcon\Config(array(
             'baseUri'       => '/'
         ),
         'production'     => array(
-            'staticBaseUri' => 'http://static.jimi.com/',
+            'staticBaseUri' => 'http://adm.jimip.com/s/',
             'baseUri'       => '/'
         ),
         'debug'          => true
@@ -49,7 +48,7 @@ return new \Phalcon\Config(array(
     'github'      => array(
         'clientId'     => '',
         'clientSecret' => '',
-        'redirectUri'  => 'http://pforum.loc/login/oauth/access_token/'
+        //'redirectUri'  => 'http://pforum.loc/login/oauth/access_token/'
     ),
 
     'amazonSns'   => array(

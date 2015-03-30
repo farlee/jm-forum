@@ -8,7 +8,7 @@ use Phalcon\Mvc\Controller;
 /**
  * Class IndexController
  *
- * @package Jimi\Controllers
+ * @package Jimi\Frontend
  */
 class IndexController extends ControllerBase
 {

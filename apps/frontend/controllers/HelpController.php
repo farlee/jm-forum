@@ -15,7 +15,7 @@ use Jimi\Badges\Manager as BadgeManager;
 /**
  * Class HelpController
  *
- * @package Jimi\Controllers
+ * @package Jimi\Frontend
  */
 class HelpController extends ControllerBase
 {
